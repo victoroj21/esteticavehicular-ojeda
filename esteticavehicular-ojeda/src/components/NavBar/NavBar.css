@@ -1,0 +1,13 @@
+.container-logo{
+    float:left;
+    width: 100px;
+}
+.container-logo img{
+    width: 100%;
+}
+
+header > div {
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
