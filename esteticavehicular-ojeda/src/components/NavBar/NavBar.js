@@ -1,31 +1,35 @@
+import React from 'react';
 import './NavBar.css';
-import logo from '../../assets/logo.png'
-//material
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
 
-import HomeIcon from '@material-ui/icons/Home';
-import ListIcon from '@material-ui/icons/List';
-import ContactSupportIcon from '@material-ui/icons/ContactSupport';
-import EmailIcon from '@material-ui/icons/Email';
+import CartWidget from '../CartWidget/CartWidget'
+
+import {AppBar,Toolbar,Typography,Button  } from '@mui/material';
+import HomeIcon from '@mui/icons-material/Home';
+import ListIcon from '@mui/icons-material/List';
+import LiveHelpIcon from '@mui/icons-material/LiveHelp';
+import EmailIcon from '@mui/icons-material/Email';
+
 
 const NavBar = () => {
-
   return (
     <AppBar position="static" className="main-navbar">
         <Toolbar>
-          <Typography variant="h6">
-              <div className='container-logo'>
-                  <img src={logo} alt='Estética vehicular'/>
+          <div className="logo-text">            
+            <CartWidget /><p>Estética Vehicular</p>
             </div>
-          </Typography>
           <div>
-            <Button color="inherit" startIcon={<HomeIcon />}>Inicio</Button>
-            <Button color="inherit" startIcon={<ListIcon />}>Productos</Button>
-            <Button color="inherit" startIcon={<ContactSupportIcon />}>FAQS</Button>
-            <Button color="inherit" startIcon={<EmailIcon />}>Contactanos</Button>
+            <Button color="inherit" startIcon={<HomeIcon />}>
+              Inicio
+            </Button>
+            <Button color="inherit" startIcon={<ListIcon />}>
+              Productos
+            </Button>
+            <Button color="inherit" startIcon={<LiveHelpIcon />}>
+              FAQ's
+            </Button>
+            <Button color="inherit" startIcon={<EmailIcon />}>
+              Conctacto
+            </Button>
           </div>
         </Toolbar>
     </AppBar>
