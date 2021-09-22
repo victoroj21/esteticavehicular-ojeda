@@ -5,7 +5,7 @@ import logo from '../../assets/logo.png'
 
 import CartWidget from '../CartWidget/CartWidget'
 
-import { AppBar, Toolbar, Typography, Button } from '@mui/material';
+import { AppBar, Toolbar, Button } from '@mui/material';
 import HomeIcon from '@mui/icons-material/Home';
 import ListIcon from '@mui/icons-material/List';
 import LiveHelpIcon from '@mui/icons-material/LiveHelp';

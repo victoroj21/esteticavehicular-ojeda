@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 
 import NavBar from './components/NavBar/NavBar'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
@@ -7,7 +6,9 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import Grid from '@mui/material/Grid';
 
 import './App.css';
-const producto = {nombre:"Nombre del producto", precio:15625, stock:10}
+
+const producto = {nombre:"Nombre del producto", precio:15625, stock:100}
+
 function App() {
   return (
     <div className="App">
