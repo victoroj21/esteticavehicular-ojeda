@@ -7,7 +7,7 @@ import Grid from '@mui/material/Grid';
 
 import './App.css';
 
-const producto = {nombre:"Nombre del producto", precio:15625, stock:100}
+const producto = {nombre:"Nombre del producto", precio:15625, stock:10}
 
 function App() {
   return (

@@ -8,34 +8,32 @@ import TextField from '@mui/material/TextField';
 import ControlPointTwoToneIcon from '@mui/icons-material/ControlPointTwoTone';
 import DoNotDisturbOnTwoToneIcon from '@mui/icons-material/DoNotDisturbOnTwoTone';
 
-const ItemCount = (stock) => {
-    const [cantidad, setCantidad] = useState(stock.initial);
+const ItemCount = (props) => {
+    const [stock, setStock] = useState(props.initial);
 
-    const sumarCantidad = () => {
-        if (cantidad < stock.disponible)
-            setCantidad(cantidad + 1);
-        //console.log(cantidad);
+    const onAdd = () => {
+        if (stock < props.stock)
+            setStock(stock + 1);
     }
 
-    const restarCantidad = () => {
-        if (cantidad > 0)
-            setCantidad(cantidad - 1);
-        //console.log(cantidad);
+    const onSubtract = () => {
+        if (stock > 0)
+            setStock(stock - 1);
 
     }
 
     return (
         <Grid container spacing={0.5} justifyContent="center">
             <Grid item xs={1}>{/* boton - */}
-                <IconButton onClick={restarCantidad} color="primary" aria-label="resta stock" >
+                <IconButton onClick={onSubtract} color="primary" aria-label="resta stock" >
                     <DoNotDisturbOnTwoToneIcon />
                 </IconButton>
             </Grid>
             <Grid item xs={2}>{/* boton text */}
-                <TextField value={cantidad} size="small" label="Cantidad" variant="outlined" />
+                <TextField value={stock} size="small" label="Cantidad" variant="outlined" />
             </Grid>
             <Grid item xs={1}> {/* boton + */}
-                <IconButton onClick={sumarCantidad} color="primary" aria-label="suma stock" >
+                <IconButton onClick={onAdd} color="primary" aria-label="suma stock" >
                     <ControlPointTwoToneIcon />
                 </IconButton>
             </Grid>
