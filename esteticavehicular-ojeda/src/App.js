@@ -7,8 +7,6 @@ import Grid from '@mui/material/Grid';
 
 import './App.css';
 
-const producto = {nombre:"Nombre del producto", precio:15625, stock:10}
-
 function App() {
   return (
     <div className="App">
@@ -17,7 +15,7 @@ function App() {
           <NavBar />
         </Grid>
         <Grid item xs={12}>
-          <ItemListContainer nombre={producto.nombre} precio={producto.precio} stock={producto.stock}/>
+          <ItemListContainer />
         </Grid>
       </Grid>
     </div>

@@ -14,7 +14,7 @@ import EmailIcon from '@mui/icons-material/Email';
 
 const NavBar = () => {
   return (
-    <AppBar position="static" className="main-navbar">
+    <AppBar position="static" className="navbar">
       <Toolbar>
         <div className="logo-text">
           <div className='container-logo'>
