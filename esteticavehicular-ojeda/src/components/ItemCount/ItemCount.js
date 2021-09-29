@@ -31,24 +31,26 @@ const ItemCount = (props) => {
     }
 
     return (
-        <Grid container spacing={0.5} justifyContent="center">
-            <Grid item xs={2}>{/* boton - */}
-                <IconButton onClick={quitar} color="primary" aria-label="resta stock" >
-                    <DoNotDisturbOnTwoToneIcon />
-                </IconButton>
+        <div className="item-count">
+            <Grid container spacing={0.5} justifyContent="center">
+                <Grid item xs={2}>{/* boton - */}
+                    <IconButton onClick={quitar} color="primary" aria-label="resta stock" >
+                        <DoNotDisturbOnTwoToneIcon />
+                    </IconButton>
+                </Grid>
+                <Grid item xs={3}>{/* boton text */}
+                    <TextField value={stock} size="small" label="Cantidad" variant="outlined" />
+                </Grid>
+                <Grid item xs={2}> {/* boton + */}
+                    <IconButton onClick={agregar} color="primary" aria-label="suma stock" >
+                        <ControlPointTwoToneIcon />
+                    </IconButton>
+                </Grid>
+                <Grid item xs={12}>
+                    <Button disabled={disabled} onClick={() => props.onAdd(stock)} variant="contained">Agregar al carrito</Button>
+                </Grid>
             </Grid>
-            <Grid item xs={3}>{/* boton text */}
-                <TextField value={stock} size="small" label="Cantidad" variant="outlined" />
-            </Grid>
-            <Grid item xs={2}> {/* boton + */}
-                <IconButton onClick={agregar} color="primary" aria-label="suma stock" >
-                    <ControlPointTwoToneIcon />
-                </IconButton>
-            </Grid>
-            <Grid item xs={12}>
-                <Button disabled={disabled} onClick={() => props.onAdd(stock)} variant="contained">Agregar al carrito</Button>
-            </Grid>
-        </Grid>
+        </div>
     );
 }
 

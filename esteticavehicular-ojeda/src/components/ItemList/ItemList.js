@@ -7,7 +7,7 @@ const ItemList = (prop) => {
 
     return (
         <div className="item-list">
-            <Grid container spacing={0.5} justifyContent="left">
+            <Grid container rowSpacing={2} columnSpacing={2} justifyContent="center">
                 {prop.items.map((item,index) => {
                     return (
                         <Grid key={index} item xs={4}>

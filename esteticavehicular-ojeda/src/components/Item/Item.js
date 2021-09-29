@@ -16,29 +16,32 @@ const Item = (prop) => {
     }
 
     return (
-        <Card sx={{ maxWidth: 345 }}>
-            <CardActionArea>
-                <CardMedia
-                    component="img"
-                    height="auto"
-                    image={`./assets/${prop.item.pictureUrl}`}
-                    alt="producto"
-                />
-                <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
-                        {prop.item.title}
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                        $ {prop.item.price}
-                    </Typography>
-                </CardContent>
-            </CardActionArea>
-            <CardActionArea>
-                <CardActions>
-                    <ItemCount stock={100} initial={0} onAdd={onAdd} />
-                </CardActions>
-            </CardActionArea>
-        </Card>
+        <div className="item">
+            <Card sx={{ maxWidth: 345 }}>
+                <CardActionArea>
+                    {/* <CardMedia
+                        component="img"
+                        height="auto"
+                        image={`./assets/${prop.item.pictureUrl}`}
+                        alt="producto"
+                    /> */}
+                    <img height="200px" width="auto" src={`./assets/${prop.item.pictureUrl}`} />
+                    <CardContent>
+                        <Typography gutterBottom variant="h5" component="div">
+                            {prop.item.title}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                            $ {prop.item.price}
+                        </Typography>
+                    </CardContent>
+                </CardActionArea>
+                <CardActionArea>
+                    <CardActions>
+                        <ItemCount stock={100} initial={0} onAdd={onAdd} />
+                    </CardActions>
+                </CardActionArea>
+            </Card>
+        </div>
     )
 }
 
