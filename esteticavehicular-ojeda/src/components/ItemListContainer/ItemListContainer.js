@@ -11,6 +11,7 @@ const ItemListContainer = () => {
 
   useEffect(() => {
     setLoader(true);
+    
     const getItems = new Promise((resolve) => {
       setTimeout(() => {
         resolve(productos);

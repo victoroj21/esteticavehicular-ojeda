@@ -40,7 +40,7 @@ Uso de React Router Dom para la navegación
 ​
 ## Aplicación en funcionamiento
 ​
-![Aplicación en funcionamiento]()
+![Aplicación en funcionamiento](https://github.com/victoroj21/esteticavehicular-ojeda/blob/main/esteticavehicular-ojeda/Navegacion.gif)
 ​
 ### Autor
 ​
