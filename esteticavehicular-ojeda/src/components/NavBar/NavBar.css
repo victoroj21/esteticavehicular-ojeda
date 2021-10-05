@@ -17,3 +17,22 @@ header > div {
 .container-logo img{
     width: 100%;
 }
+
+.selected {
+    color: white !important ;
+    text-transform: uppercase;
+    -webkit-text-stroke-width: thin
+  }
+
+  .unselected{
+        color: white !important ;
+  }
+
+  .category-container{
+    display: contents;
+  }
+
+  ul {
+    list-style-type: none;
+    display: contents;
+  }

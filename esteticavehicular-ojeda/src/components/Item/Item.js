@@ -5,8 +5,8 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardActionArea from '@mui/material/CardActionArea';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
+import { Link } from 'react-router-dom';
 
 
 const Item = (prop) => {
@@ -18,26 +18,22 @@ const Item = (prop) => {
     return (
         <div className="item">
             <Card sx={{ maxWidth: 345 }}>
-                <CardActionArea>
-                    {/* <CardMedia
-                        component="img"
-                        height="auto"
-                        image={`./assets/${prop.item.pictureUrl}`}
-                        alt="producto"
-                    /> */}
-                    <img height="200px" width="auto" src={`./assets/${prop.item.pictureUrl}`} />
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="div">
-                            {prop.item.title}
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary">
-                            $ {prop.item.price}
-                        </Typography>
-                    </CardContent>
-                </CardActionArea>
+                <Link to={`/item/${prop.item.id}`}>
+                    <CardActionArea>
+                        <img height="200px" width="auto" src={`../assets/${prop.item.pictureUrl}`} />
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="div">
+                                {prop.item.title}
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary">
+                                $ {prop.item.price}
+                            </Typography>
+                        </CardContent>
+                    </CardActionArea>
+                </Link>
                 <CardActionArea>
                     <CardActions>
-                        <ItemCount stock={100} initial={0} onAdd={onAdd} />
+                        <ItemCount stock={prop.item.stock} initial={0} onAdd={onAdd} />
                     </CardActions>
                 </CardActionArea>
             </Card>

@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 
 import Grid from '@mui/material/Grid';
-import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import TextField from '@mui/material/TextField';
-
 import ControlPointTwoToneIcon from '@mui/icons-material/ControlPointTwoTone';
 import DoNotDisturbOnTwoToneIcon from '@mui/icons-material/DoNotDisturbOnTwoTone';
+import Button from '@mui/material/Button';
 
 const ItemCount = (props) => {
     const [stock, setStock] = useState(props.initial);
+    const [loading, setLoading] = useState(false)
     const [disabled, disabledButton] = useState(true);
 
     const agregar = () => {
@@ -28,6 +28,14 @@ const ItemCount = (props) => {
             disabledButton(true);
         }
 
+    }
+
+    const load = () =>{
+        setTimeout(() => {
+            setLoading(true)
+          }, 2000)
+
+          setLoading(false);
     }
 
     return (
@@ -49,6 +57,7 @@ const ItemCount = (props) => {
                 <Grid item xs={12}>
                     <Button disabled={disabled} onClick={() => props.onAdd(stock)} variant="contained">Agregar al carrito</Button>
                 </Grid>
+                <p>Stock disponible {props.stock}</p>
             </Grid>
         </div>
     );

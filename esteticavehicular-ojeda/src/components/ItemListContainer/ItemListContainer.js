@@ -1,32 +1,34 @@
-import React, {useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import ItemList from '../ItemList/ItemList';
+import { useParams } from 'react-router';
+import { productos } from '../../data/productos'
+import LinearProgress from '@mui/material/LinearProgress';
 
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
-
-  const getItems = new Promise((resolve) => {
-    setTimeout(() => {
-      const mockItems = [
-        { id: 1, title: "PUERTA DELANTERA DERECHA", price: 1000, pictureUrl: "pdd.jpg" },
-        { id: 2, title: "PUERTA DELANTERA IZQUIERDA", price: 2500, pictureUrl: "pdi.jpg" },
-        { id: 3, title: "PUERTA TRASERA DERECHA", price: 3000, pictureUrl: "ptd.jpg" },
-        { id: 4, title: "PUERTA TRASERA IZQUIERDA", price: 4500, pictureUrl: "pti.jpg" }
-      ]
-
-      resolve(mockItems);
-    }, 2000)
-  })
+  const [loader, setLoader] = useState(true);
+  const { id } = useParams();
 
   useEffect(() => {
-    getItems.then((data) => {
-      setItems(data);
+    setLoader(true);
+    const getItems = new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(productos);
+      }, 2000)
     })
-  }, [])
+
+    getItems.then((data) => {
+      id ? setItems(data.filter(x => x.category === id)) : setItems(data);
+
+    }).finally(() => setLoader(false))
+  }, [id])
 
 
   return (
     <div className="item-list-container">
-      <ItemList items={items} />
+      {loader ? (<h3>Cargando productos...<LinearProgress /></h3>) : (
+        <ItemList items={items} />)
+      }
     </div>
   );
 }
