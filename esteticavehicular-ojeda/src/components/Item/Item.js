@@ -31,11 +31,11 @@ const Item = (prop) => {
                         </CardContent>
                     </CardActionArea>
                 </Link>
-                <CardActionArea>
+                {/* <CardActionArea>
                     <CardActions>
                         <ItemCount stock={prop.item.stock} initial={0} onAdd={onAdd} />
                     </CardActions>
-                </CardActionArea>
+                </CardActionArea> */}
             </Card>
         </div>
     )
