@@ -3,6 +3,7 @@ import ItemList from '../ItemList/ItemList';
 import { useParams } from 'react-router';
 import { productos } from '../../data/productos'
 import LinearProgress from '@mui/material/LinearProgress';
+import CategoryListContainer from '../CategoryListContainer/CategoryListContainer';
 
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
@@ -11,7 +12,7 @@ const ItemListContainer = () => {
 
   useEffect(() => {
     setLoader(true);
-    
+
     const getItems = new Promise((resolve) => {
       setTimeout(() => {
         resolve(productos);
@@ -27,9 +28,14 @@ const ItemListContainer = () => {
 
   return (
     <div className="item-list-container">
-      {loader ? (<h3>Cargando productos...<LinearProgress /></h3>) : (
-        <ItemList items={items} />)
-      }
+      <div>
+        <CategoryListContainer />
+      </div>
+      <div>
+        {loader ? (<h3>Cargando productos...<LinearProgress color="error" /></h3>) : (
+          <ItemList items={items} />)
+        }
+      </div>
     </div>
   );
 }

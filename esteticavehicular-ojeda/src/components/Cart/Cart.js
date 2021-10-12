@@ -1,9 +1,10 @@
 import React from 'react';
+import ItemsCartContainer from '../ItemsCartContainer/ItemsCartContainer';
 import './Cart.css';
 
 const Cart = () => {
   return (
-      <h2>Se agregaron los productos al carrito</h2>
+      <ItemsCartContainer />
   );
 }
 

@@ -3,10 +3,14 @@ import AppRouter from './AppRouter/AppRouter';
 
 import './App.css';
 
+import { CartProvider } from './Context/CartContext';
+
 function App() {
   return (
     <div className="App">
-      <AppRouter />
+      <CartProvider>
+        <AppRouter />
+      </CartProvider>
     </div>
   );
 }

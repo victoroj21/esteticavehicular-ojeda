@@ -1,8 +1,6 @@
 import React from 'react';
-import ItemCount from '../ItemCount/ItemCount';
 
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardActionArea from '@mui/material/CardActionArea';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
@@ -31,11 +29,6 @@ const Item = (prop) => {
                         </CardContent>
                     </CardActionArea>
                 </Link>
-                {/* <CardActionArea>
-                    <CardActions>
-                        <ItemCount stock={prop.item.stock} initial={0} onAdd={onAdd} />
-                    </CardActions>
-                </CardActionArea> */}
             </Card>
         </div>
     )

@@ -26,7 +26,7 @@ const ItemDetailContainer = () => {
 
   return (
     <div className="item-detail-container">
-      {loader ? (<h3> Obteniendo información del producto...<LinearProgress /></h3>) : (
+      {loader ? (<h3> Obteniendo información del producto...<LinearProgress color="error"/></h3>) : (
         <ItemDetail item={item} />)
       }
 
