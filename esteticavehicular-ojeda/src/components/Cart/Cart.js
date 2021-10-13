@@ -1,10 +1,10 @@
 import React from 'react';
-import ItemsCartContainer from '../ItemsCartContainer/ItemsCartContainer';
+import CartItemListContainer from '../CartItemListContainer/CartItemListContainer';
 import './Cart.css';
 
 const Cart = () => {
   return (
-      <ItemsCartContainer />
+      <CartItemListContainer />
   );
 }
 

@@ -1,9 +1,9 @@
 import React from 'react';
-import Item from '../Item/Item';
+import CartItem from '../CartItem/CartItem';
 
 import Grid from '@mui/material/Grid';
 
-const ItemList = (prop) => {
+const CartItemList = (prop) => {
 
     return (
         <div className="item-list">
@@ -11,7 +11,7 @@ const ItemList = (prop) => {
                 {prop.items.map((item,index) => {
                     return (
                         <Grid key={index} item xs={3}>
-                            <Item item={item} />
+                            <CartItem item={item} />
                         </Grid>
                     )
                 })}
@@ -20,4 +20,4 @@ const ItemList = (prop) => {
     );
 }
 
-export default ItemList;
+export default CartItemList;

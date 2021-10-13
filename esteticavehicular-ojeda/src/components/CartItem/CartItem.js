@@ -9,7 +9,7 @@ import { NavLink } from 'react-router-dom';
 
 
 
-const ItemCart = (prop) => {
+const CartItem = (prop) => {
     const cartData = useContext(CartContext);
 
     return (
@@ -34,4 +34,4 @@ const ItemCart = (prop) => {
     )
 }
 
-export default ItemCart;
+export default CartItem;
