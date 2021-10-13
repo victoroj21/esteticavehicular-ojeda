@@ -12,7 +12,7 @@ const CategoryList = (props) => {
                     props.categories.map((cat) => {
                         return (
                             <NavLink to={cat.path} exact activeClassName="selected">
-                                <Button color="error">{cat.description}</Button>
+                                <Button color="primary">{cat.description}</Button>
                             </NavLink>
                         )
                     })

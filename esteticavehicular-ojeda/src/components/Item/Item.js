@@ -9,10 +9,6 @@ import { Link } from 'react-router-dom';
 
 const Item = (prop) => {
 
-    const onAdd = (unidades) => {
-        console.log(`Se agregaron ${unidades} unidades de ${prop.item.title} al carrito`)
-    }
-
     return (
         <div className="item">
             <Card sx={{ maxWidth: 345 }}>

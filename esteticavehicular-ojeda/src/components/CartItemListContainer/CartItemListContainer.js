@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import CartContext from '../../Context/CartContext';
 import CartItemList from '../CartItemList/CartItemList'
-import { Grid, LinearProgress } from '@mui/material';
+import { LinearProgress } from '@mui/material';
 
 const CartItemListContainer = () => {
   const [items, setItems] = useState([]);
@@ -20,13 +20,13 @@ const CartItemListContainer = () => {
     getItems.then((data) => {
       setItems(data);
     }).finally(() => setLoader(false))
-  }, [])
+  }, [cartData.items])
 
 
   return (
     <div className="items-cart-container">
       <div>
-        {loader ? (<h3>Cargando carrito...<LinearProgress color="error" /></h3>) : (
+        {loader ? (<h3>Cargando carrito...<LinearProgress color="primary" /></h3>) : (
           <CartItemList items={items} />)
         }
       </div>

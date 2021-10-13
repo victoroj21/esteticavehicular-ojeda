@@ -5,9 +5,9 @@ import CardActions from '@mui/material/CardActions';
 import Typography from '@mui/material/Typography';
 import ItemCount from '../ItemCount/ItemCount';
 import { Button, Paper } from '@mui/material';
-import { NavLink } from 'react-router-dom';
 
 import CartContext from '../../Context/CartContext';
+import { NavLink } from 'react-router-dom';
 
 const ItemDetail = (prop) => {
     const [cantidad, setCantidad] = useState(0);
@@ -35,10 +35,11 @@ const ItemDetail = (prop) => {
 
     const onAdd = (unidades) => {
         console.log(`Se agregaron ${unidades} unidades de ${prop.item.title} al carrito`)
-        cartData.addItems(prop.item, unidades);
+        prop.item.quantity = unidades;
+        cartData.addItems(prop.item);
     }
 
-    
+
     return (
         <div className="item-detail">
             <Grid container spacing={0.5} justifyContent="center">
@@ -73,9 +74,13 @@ const ItemDetail = (prop) => {
                         <Grid xs={12}>
                             <CardActions>
                                 <ItemCount stock={prop.item.stock} quantity={cantidad} add={add} less={less} />
-                                {/* <NavLink to={"/cart"} exact> */}
+                                {cartData.isInCart(prop.item.id) ?
+                                    <NavLink to="/cart" exact>
+                                        <Button color="success" variant="contained">Terminar mi compra</Button>
+                                    </NavLink>
+                                    :
                                     <Button disabled={disabled} onClick={() => onAdd(cantidad)} variant="contained">Agregar al carrito</Button>
-                                {/* </NavLink> */}
+                                }
                             </CardActions>
                         </Grid>
                     </Paper>

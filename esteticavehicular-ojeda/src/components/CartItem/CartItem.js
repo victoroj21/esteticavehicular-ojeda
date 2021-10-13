@@ -19,15 +19,15 @@ const CartItem = (prop) => {
                     <img height="200px" width="auto" src={`../assets/${prop.item.pictureUrl}`} />
                     <CardContent>
                         <Typography gutterBottom variant="h5" component="div">
-                            {prop.item.title}
+                            {prop.item.title + " (x" + prop.item.quantity + ")"}
                         </Typography>
                         <Typography variant="body2" color="text.secondary">
                             $ {prop.item.price}
                         </Typography>
                     </CardContent>
                 </CardActionArea>
-                <NavLink  to="/cart" exact activeClassName="selected">
-                <Button onClick={() => cartData.removeItem(prop.item.id)} variant="contained" color="warning">Sacar del carrito</Button>
+                <NavLink to="/cart" exact>
+                    <Button onClick={() => cartData.removeItem(prop.item.id)} variant="contained" color="warning">Sacar del carrito</Button>
                 </NavLink>
             </Card>
         </div>

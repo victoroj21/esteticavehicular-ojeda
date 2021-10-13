@@ -1,6 +1,5 @@
 import React from 'react';
 import './NavBar.css';
-import { categorias } from '../../data/categorias';
 import logo from '../../assets/logo.png'
 
 import CartWidget from '../CartWidget/CartWidget'
@@ -16,7 +15,7 @@ import { NavLink } from 'react-router-dom';
 
 const NavBar = () => {
   return (
-    <AppBar position="static" color="error" className="navbar">
+    <AppBar position="static" color="primary" className="navbar">
       <Toolbar>
         <div className="logo-text">
           <div className='container-logo'>
@@ -41,9 +40,9 @@ const NavBar = () => {
               FAQ's
             </Button>
           </NavLink>
-          <NavLink to="/conctac" exact activeClassName="selected">
+          <NavLink to="/contact" exact activeClassName="selected">
             <Button color="inherit" startIcon={<EmailIcon />}>
-              Conctacto
+              Contacto
             </Button>
           </NavLink>
           <CartWidget />

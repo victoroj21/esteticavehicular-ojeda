@@ -32,7 +32,7 @@ const ItemListContainer = () => {
         <CategoryListContainer />
       </div>
       <div>
-        {loader ? (<h3>Cargando productos...<LinearProgress color="error" /></h3>) : (
+        {loader ? (<h3>Cargando productos...<LinearProgress color="primary" /></h3>) : (
           <ItemList items={items} />)
         }
       </div>
