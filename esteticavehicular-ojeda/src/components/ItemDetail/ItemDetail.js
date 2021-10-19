@@ -34,7 +34,7 @@ const ItemDetail = (prop) => {
     }
 
     const onAdd = (unidades) => {
-        console.log(`Se agregaron ${unidades} unidades de ${prop.item.title} al carrito`)
+        
         prop.item.quantity = unidades;
         cartData.addItems(prop.item);
     }
@@ -45,7 +45,7 @@ const ItemDetail = (prop) => {
             <Grid container spacing={0.5} justifyContent="center">
                 <Grid xs={12}>
                     <Typography gutterBottom variant="h5" component="div">
-                        {`# ${prop.item.id} - ${prop.item.title}`}
+                        {`${prop.item.title}`}
                     </Typography>
                 </Grid>
                 <Grid xs={6}>

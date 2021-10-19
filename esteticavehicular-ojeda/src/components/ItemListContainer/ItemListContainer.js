@@ -4,25 +4,32 @@ import { useParams } from 'react-router';
 import { productos } from '../../data/productos'
 import LinearProgress from '@mui/material/LinearProgress';
 import CategoryListContainer from '../CategoryListContainer/CategoryListContainer';
+import { collection, getDocs } from 'firebase/firestore'
+import db from '../../firebase/firebase';
 
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
   const [loader, setLoader] = useState(true);
   const { id } = useParams();
 
+  async function getItems(db, idCat) {
+    const itemsCol = collection(db, "items");
+    const itemsSnapshot = await getDocs(itemsCol);
+    const itemsList = itemsSnapshot.docs.map(doc => doc.data());
+    //setItems(itemsList)
+    //setLoader(false)
+    console.log(itemsList)
+    return itemsList
+  }
+
   useEffect(() => {
     setLoader(true);
+    getItems(db)
+      .then((data) => {
+        id ? setItems(data.filter(x => x.category === id)) : setItems(data);
 
-    const getItems = new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(productos);
-      }, 2000)
-    })
-
-    getItems.then((data) => {
-      id ? setItems(data.filter(x => x.category === id)) : setItems(data);
-
-    }).finally(() => setLoader(false))
+      })
+      .finally(() => setLoader(false));
   }, [id])
 
 
