@@ -11,14 +11,18 @@ const CategoryListContainer = () => {
     const categoriesCol = collection(db, "categories");
     const categoriesSnapshot = await getDocs(categoriesCol);
     const categoriesList = categoriesSnapshot.docs.map(doc => doc.data());
-    setCategories(categoriesList);
+    //setCategories(categoriesList);
     return categoriesList;
   }
 
   useEffect(() => {
 
     getCategories(db).then((data) => {
-      setCategories(data);
+      setCategories(data.sort(
+        function(a,b){
+          return a.orden - b.orden
+        }
+        ));
     })
   }, [])
 

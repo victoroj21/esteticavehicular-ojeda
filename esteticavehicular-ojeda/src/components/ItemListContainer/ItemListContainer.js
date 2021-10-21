@@ -4,7 +4,7 @@ import { useParams } from 'react-router';
 import { productos } from '../../data/productos'
 import LinearProgress from '@mui/material/LinearProgress';
 import CategoryListContainer from '../CategoryListContainer/CategoryListContainer';
-import { collection, getDocs } from 'firebase/firestore'
+import { collection, getDocs, query, where } from 'firebase/firestore'
 import db from '../../firebase/firebase';
 
 const ItemListContainer = () => {
@@ -14,7 +14,14 @@ const ItemListContainer = () => {
 
   async function getItems(db, idCat) {
     const itemsCol = collection(db, "items");
-    const itemsSnapshot = await getDocs(itemsCol);
+    let q;
+
+    if (idCat)
+      q = query(itemsCol, where("category", "==", idCat));
+    else
+      q = query(itemsCol, where("category", "!=", ""));
+
+    const itemsSnapshot = await getDocs(q);
     const itemsList = itemsSnapshot.docs.map(doc => doc.data());
     //setItems(itemsList)
     //setLoader(false)
@@ -24,9 +31,10 @@ const ItemListContainer = () => {
 
   useEffect(() => {
     setLoader(true);
-    getItems(db)
+    getItems(db, id)
       .then((data) => {
-        id ? setItems(data.filter(x => x.category === id)) : setItems(data);
+        //id ? setItems(data.filter(x => x.category === id)) : setItems(data);
+        setItems(data)
 
       })
       .finally(() => setLoader(false));

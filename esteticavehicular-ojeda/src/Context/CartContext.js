@@ -21,6 +21,8 @@ const CartProvider = ({ children }) => {
 
     const clear = () => {
         setItems([]);
+        setTotalPrice(0);
+        setCartSize(0);
     }
 
     const removeItem = (itemId) => {
