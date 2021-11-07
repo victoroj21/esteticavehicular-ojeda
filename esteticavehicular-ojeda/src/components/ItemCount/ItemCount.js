@@ -5,14 +5,16 @@ import IconButton from '@mui/material/IconButton';
 import TextField from '@mui/material/TextField';
 import ControlPointTwoToneIcon from '@mui/icons-material/ControlPointTwoTone';
 import DoNotDisturbOnTwoToneIcon from '@mui/icons-material/DoNotDisturbOnTwoTone';
+import { Typography } from '@mui/material';
 
+//Maneja cantidad de un producto
 const ItemCount = (props) => {
 
     return (
         <div className="item-count">
             <Grid container spacing={0.5} justifyContent="center">
                 <Grid item xs={2}>{/* boton - */}
-                    <IconButton onClick={props.less} color="primary" aria-label="resta stock" >
+                    <IconButton onClick={props.less} color="error" aria-label="resta stock" >
                         <DoNotDisturbOnTwoToneIcon />
                     </IconButton>
                 </Grid>
@@ -20,12 +22,14 @@ const ItemCount = (props) => {
                      <TextField value={props.quantity} size="small" label="Cantidad" variant="outlined" />
                 </Grid>
                 <Grid item xs={2}> {/* boton + */}
-                    <IconButton onClick={props.add} color="primary" aria-label="suma stock" >
+                    <IconButton onClick={props.add} color="error" aria-label="suma stock" >
                         <ControlPointTwoToneIcon />
                     </IconButton>
                 </Grid>
                 <Grid item xs={12}>
-                    <p>Stock disponible {props.stock}</p>
+                <Typography variant="overline" component="div">
+                    Stock disponible {props.stock}
+                    </Typography>
                 </Grid>
                 
             </Grid>

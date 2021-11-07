@@ -13,9 +13,10 @@ import EmailIcon from '@mui/icons-material/Email';
 
 import { NavLink } from 'react-router-dom';
 
+//barra de navegacion
 const NavBar = () => {
   return (
-    <AppBar position="static" color="primary" className="navbar">
+    <AppBar position="static" color="error" className="navbar">
       <Toolbar>
         <div className="logo-text">
           <div className='container-logo'>

@@ -11,7 +11,6 @@ const CategoryListContainer = () => {
     const categoriesCol = collection(db, "categories");
     const categoriesSnapshot = await getDocs(categoriesCol);
     const categoriesList = categoriesSnapshot.docs.map(doc => doc.data());
-    //setCategories(categoriesList);
     return categoriesList;
   }
 

@@ -7,6 +7,9 @@ Cuenta con
 -Listado de productos.
 -Categoria de productos.
 -Detalle de un producto puntual
+-Carrito de compra
+-Seleccion de la cantidad de productos para el carrito, con actualizacion de stock
+-Checkout que informa los datos de la compra
 ​
 ## Instalación
 ​
@@ -33,9 +36,9 @@ Cuenta con
 ## Dependencias
 ​
 Uso de Material UI  para dar formato a la aplicación.
-​
-Uso de React Router Dom para la navegación
-​
+​Uso de Material UI Iconos para iconos.
+Uso de React Router Dom para la navegación.
+​Se usa Firebase para la persistencia de datos.
 ​
 ​
 ## Aplicación en funcionamiento

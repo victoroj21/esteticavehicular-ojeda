@@ -3,6 +3,7 @@ import './CategoryList.css'
 import { NavLink } from 'react-router-dom';
 import { Button, ButtonGroup } from '@mui/material';
 
+//muestra la lista de categorias
 const CategoryList = (props) => {
 
     return (
@@ -12,7 +13,7 @@ const CategoryList = (props) => {
                     props.categories.map((cat) => {
                         return (
                             <NavLink to={cat.path} exact activeClassName="selected">
-                                <Button color="primary">{cat.description}</Button>
+                                <Button color="error">{cat.description}</Button>
                             </NavLink>
                         )
                     })

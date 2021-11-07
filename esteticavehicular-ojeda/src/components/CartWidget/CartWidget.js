@@ -8,21 +8,19 @@ import Badge from '@mui/material/Badge';
 import CartContext from '../../Context/CartContext';
 import { NavLink } from 'react-router-dom';
 
+// Widget del carrito
 const CartWidget = () => {
   const cartData = useContext(CartContext);
+
   return (
     <>
-      {cartData.cartSize > 0 ?
-        <NavLink to="/cart" exact activeClassName="selected">
-          <IconButton color="inherit" aria-label="carrito">
-            <Badge badgeContent={cartData.cartSize} color="error">
-              <ShoppingCartIcon />
-            </Badge>
-          </IconButton>
-        </NavLink>
-        :
-        <></>
-      }
+      <NavLink to="/cart" exact activeClassName="selected">
+        <IconButton color="inherit" aria-label="carrito">
+          <Badge badgeContent={cartData.cartSize} color="primary">
+            <ShoppingCartIcon />
+          </Badge>
+        </IconButton>
+      </NavLink>
     </>
   );
 }

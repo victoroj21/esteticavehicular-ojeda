@@ -26,7 +26,7 @@ const CartItemListContainer = () => {
   return (
     <div className="items-cart-container">
       <div>
-        {loader ? (<h3>Cargando carrito...<LinearProgress color="primary" /></h3>) : (
+        {loader ? (<h3>Cargando carrito...<LinearProgress color="error" /></h3>) : (
           <CartItemList items={items} />)
         }
       </div>

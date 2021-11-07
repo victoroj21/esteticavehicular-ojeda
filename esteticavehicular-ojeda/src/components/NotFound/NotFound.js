@@ -6,7 +6,7 @@ const NotFound = () => {
     return (
         <div>
             <img src={error}></img>
-            <h2>Página no encontrada</h2>
+            <h2 style={{color:'red'}}>Página no encontrada</h2>
         </div>
     );
 }

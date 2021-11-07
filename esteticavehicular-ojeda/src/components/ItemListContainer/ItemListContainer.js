@@ -23,8 +23,6 @@ const ItemListContainer = () => {
 
     const itemsSnapshot = await getDocs(q);
     const itemsList = itemsSnapshot.docs.map(doc => doc.data());
-    //setItems(itemsList)
-    //setLoader(false)
     console.log(itemsList)
     return itemsList
   }
@@ -33,7 +31,6 @@ const ItemListContainer = () => {
     setLoader(true);
     getItems(db, id)
       .then((data) => {
-        //id ? setItems(data.filter(x => x.category === id)) : setItems(data);
         setItems(data)
 
       })
@@ -47,7 +44,7 @@ const ItemListContainer = () => {
         <CategoryListContainer />
       </div>
       <div>
-        {loader ? (<h3>Cargando productos...<LinearProgress color="primary" /></h3>) : (
+        {loader ? (<h3>Cargando productos...<LinearProgress color="error" /></h3>) : (
           <ItemList items={items} />)
         }
       </div>
